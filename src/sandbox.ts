@@ -55,3 +55,25 @@ greet1({name:"Sam", uid: 1});
 
 //  The DOM & Type Casting
 
+// generics: allows us to create reusable blocks of code which can be used with different types
+//ex: const uui = <T extends object> (obj:T) => {
+    // let uuid = Math.floor(Math.random()* 100);
+    // return {...obj, uuid}
+// }
+// <T extends object>
+// <T extends {name:string}>
+interface Resource <T> {
+    uid: number;
+    resourceName : string;
+    data : T;
+}
+const docThree: Resource<string> = {
+    uid: 1,
+    resourceName: 'person',
+    data : 'dsa'
+}
+const docThree1: Resource<string[]> = {
+    uid: 1,
+    resourceName: 'person',
+    data : ['dsa']
+}

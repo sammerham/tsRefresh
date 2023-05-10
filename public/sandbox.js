@@ -32,4 +32,13 @@ const log2 = (el) => { console.log('el', el); };
 let greet1;
 greet1 = (user) => { console.log(`${user.name} says hello!`); };
 greet1({ name: "Sam", uid: 1 });
-//  The DOM & Type Casting
+const docThree = {
+    uid: 1,
+    resourceName: 'person',
+    data: 'dsa'
+};
+const docThree1 = {
+    uid: 1,
+    resourceName: 'person',
+    data: ['dsa']
+};
