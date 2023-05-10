@@ -51,7 +51,14 @@ let greet1 : (user: objWithName ) => void;
 greet1 = (user: objWithName ):void => {console.log(`${user.name} says hello!`)};
 greet1({name:"Sam", uid: 1});
 
+// enums: are special type in TS which allows up to store set of constants or keywords and assosiate them with numeric value
 
+enum ResourceType {BOOK, AUTHOR, WRITER, FILM};
+
+
+//tuples: they are like arr but once the data inside iniated, can't be changed; it check type/position
+let arr = ['ssd', 1, true];
+let tup: [string, number, boolean ] = ['ssd', 1, true];
 
 //  The DOM & Type Casting
 
@@ -64,16 +71,18 @@ greet1({name:"Sam", uid: 1});
 // <T extends {name:string}>
 interface Resource <T> {
     uid: number;
-    resourceName : string;
+    resourceName : ResourceType;
     data : T;
 }
 const docThree: Resource<string> = {
     uid: 1,
-    resourceName: 'person',
+    resourceName: ResourceType.AUTHOR,
     data : 'dsa'
 }
 const docThree1: Resource<string[]> = {
     uid: 1,
-    resourceName: 'person',
+    resourceName: ResourceType.WRITER,
     data : ['dsa']
 }
+
+

@@ -32,13 +32,25 @@ const log2 = (el) => { console.log('el', el); };
 let greet1;
 greet1 = (user) => { console.log(`${user.name} says hello!`); };
 greet1({ name: "Sam", uid: 1 });
+// enums: are special type in TS which allows up to store set of constants or keywords and assosiate them with numeric value
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["WRITER"] = 2] = "WRITER";
+    ResourceType[ResourceType["FILM"] = 3] = "FILM";
+})(ResourceType || (ResourceType = {}));
+;
+//tuples: they are like arr but once the data inside iniated, can't be changed; it check type/position
+let arr = ['ssd', 1, true];
+let tup = ['ssd', 1, true];
 const docThree = {
     uid: 1,
-    resourceName: 'person',
+    resourceName: ResourceType.AUTHOR,
     data: 'dsa'
 };
 const docThree1 = {
     uid: 1,
-    resourceName: 'person',
+    resourceName: ResourceType.WRITER,
     data: ['dsa']
 };
